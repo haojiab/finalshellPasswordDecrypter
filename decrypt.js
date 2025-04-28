@@ -70,12 +70,12 @@ function btn_click() {
     let password = document.getElementById("passwordInput").value;
     let result = "";
     try {
-        result = decrypt(password);
+        result = "解密成功，解密之后的密码为：<br/>"+decrypt(password);
     } catch (error) {
         document.getElementById("result").textContent = "";
-        document.getElementById("errorText").textContent = "未知输入";
+        document.getElementById("errorText").textContent = "您输入的非finalshell加密密码，请重新输入";
         return;
     }
-    document.getElementById("result").textContent = result;
+    document.getElementById("result").innerHTML = result;
     document.getElementById("errorText").textContent = "";
 }
